@@ -1,0 +1,77 @@
+
+<!-- <pre>{{currentUser | json}}</pre> -->
+<!-- <pre>{{businessData | json}}</pre> -->
+<div ng-if="businessData">
+  <div class="panel panel-info">
+    <div class="panel-heading"><h1>{{businessData.name}}</h1></div>
+    <!-- <div class="panel-body"> -->
+    <table class="table" >
+      <!-- <tr>
+        <td class='col-xs-3 col-md-3 text-center'>Name</td>
+        <td ><h3>{{businessData.name}}</h3></td>
+
+      </tr> -->
+      <tr>
+        <td class="col-xs-3 col-md-3">Review count: </td>
+        <td>{{businessData.review_count}}</td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">Rating: </td>
+        <td>{{businessData.rating}}</td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">Star</td>
+        <td><img src="{{businessData.rating_img_url}}" alt=""></td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">Phone: </td>
+        <td>{{businessData.display_phone}}</td>
+      </tr>
+
+      <tr>
+        <td class="col-xs-3 col-md-3">Url: </td>
+        <td><a href="{{businessData.url}}">visit page</a></td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">Address: </td>
+        <td>{{businessData.location.display_address[0]}} {{businessData.location.display_address[1]}}  {{businessData.location.display_address[2]}}</td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">Menu Provider: </td>
+        <td>{{businessData.menu_provider}}</td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">Snippet text: </td>
+        <td>{{businessData.snippet_text}}</td>
+      </tr>
+      <tr>
+        <td class="col-xs-3 col-md-3">image: </td>
+        <td><img src="{{businessData.image_url}}" alt="food"></td>
+      </tr>
+
+
+    </table>
+  <!-- </div> -->
+</div>
+</div>
+<br>
+<div>
+  <div class="alert alert-info">
+    <h1 class="text-left">My Favorite</h1>
+  </div>
+
+  <table class="table table-hover myTable">
+    <thead>
+      <tr class="bg-info">
+        <th class="text-center">Name</th>
+        <th class="text-center">Un-favorite</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='yelp in currentUser.data.yelps track by $index' ng-click="searchBussiness(yelp.businessId)" >
+        <td>{{yelp.businessId}}</td>
+        <td><button class="btn btn-danger" ng-click="deleteYelp(yelp.businessId)"><i class="fa fa-thumbs-o-down"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

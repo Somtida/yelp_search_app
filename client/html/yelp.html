@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Track Yelp</h1>
+
+  <!-- <form ng-submit='addYelp()'>
+
+    <input type="text" ng-model='addObj.symbol' placeholder="symbol" required>
+    <button class="btn btn-success">Add</button>
+
+  </form> -->
+
+  <br>
+  <br>
+
+  <!-- <div>
+    <div ng-if="searchResults" class="alert alert-warning">
+      {{message}}
+    </div>
+  </div> -->
+
+  <div ng-if="searchResults">
+    <!-- {{searchResults | json}} -->
+    <!-- <pre> -->
+    <button ng-show="searchResults.length" class="btn btn-info" ng-click="refreshPage()">Refresh</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>LastPrice</th>
+          <th>Low</th>
+          <th>High</th>
+          <th>Change</th>
+          <th>ChangePercent</th>
+          <th>Timestamp</th>
+          <th>Delete</th>
+        </tr>
+
+      </thead>
+      <tbody  ng-repeat="stock in searchResults track by $index">
+        <tr>
+          <td>{{ stock.Name }}</td>
+          <td>{{ stock.Symbol }}</td>
+          <td>{{ stock.LastPrice | currency}}</td>
+          <td>{{ stock.Low | currency}}</td>
+          <td>{{ stock.High | currency}}</td>
+          <td>{{ stock.Change | currency}}</td>
+          <td>{{ stock.ChangePercent | number:2 }}</td>
+          <td>{{ stock.Timestamp | date:"MM/dd/yyyy 'at' h:mma"}}</td>
+          <td><button class="btn btn-danger" ng-click="deleteAYelp(stock.Symbol)">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- </pre> -->
+  </div>
+
+
+</div>

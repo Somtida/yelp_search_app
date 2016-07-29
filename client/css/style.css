@@ -1,0 +1,57 @@
+body{
+  text-align: center;
+}
+.registerContainer{
+  margin: 0 auto;
+  width: 80%;
+}
+.profile-img{
+  width: 50%;
+}
+.loginContainer{
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #66ccff;
+  border-radius: 5px;
+}
+
+input{
+  margin-bottom: 10px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+.table-hover{
+  cursor: pointer;
+}
+.searchYelpArea{
+  margin: 0 auto;
+  /*border: 2px solid #ff66ff;*/
+  width: 80%;
+  border-radius: 10px;
+  padding: 10px;
+  /*background-color: #ffccff;*/
+}
+.searchYelpArea input{
+  width: 300px;
+  margin-right: 10px;
+  padding: 7px;
+  color: #000;
+}
+.dataArea{
+  /*background-color: #ff0066;
+  color: #fff;*/
+  border: 1px solid #ff0066;
+  border-radius: 10px;
+}
+.dataShow{
+  border: 1px solid #009933;
+  border-radius: 10px;
+}
+.myTable{
+  font-size: 20px;
+  border: 3px solid skyblue;
+}

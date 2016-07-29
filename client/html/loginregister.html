@@ -1,0 +1,24 @@
+
+<h1>{{ currentState }}</h1>
+
+
+<div class="loginContainer">
+<!-- <div class="panel panel-info"> -->
+        <img class="logo-img" src="/temp/useri.png" />
+        <form class="form-signin" ng-submit='submit()'>
+          <input type="text" ng-model='user.username' class="form-control" placeholder="Username" required autofocus>
+          <input type="password" ng-model='user.password' class="form-control" placeholder="Password" required>
+          <input  type="password"
+                  ng-model='user.password2'
+                  class="form-control"
+                  placeholder="Password (again)"
+                  ng-if='currentState === "register"'
+                  required>
+
+          <button class="btn btn-success btn-block btn-signin">{{ currentState }}</button>
+
+
+        </form><!-- /form -->
+
+    <!-- </div> -->
+</div>

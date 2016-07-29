@@ -1,0 +1,74 @@
+<div class="container">
+  <!-- <form ng-submit='addYelp()'>
+
+      <input type="text" ng-model='addObj.businessName' placeholder="businessName" required>
+      <button class="btn btn-success">Add</button>
+
+  </form> -->
+
+<div class="searchYelpArea alert alert-warning">
+
+  <form ng-submit='searchYelp()'>
+      <label><b>Find: </b></label>
+      <input type="text" ng-model='searchObj.term' placeholder="tacos" required>
+        <label><b>Near: </b></label>
+      <input type="text" ng-model='searchObj.location' placeholder="San Francisco" required>
+      <button class="btn btn-success">Search</button>
+
+  </form>
+</div>
+<p></p>
+  <!-- <pre>{{searchResults.businesses | json}}</pre> -->
+  <div ng-if="message">
+    <div class="alert alert-success">{{message}}</div>
+  </div>
+
+  <div ng-if="searchResults">
+
+    <button ng-show="searchResults.length" class="btn btn-info" ng-click="refreshPage()">Refresh</button>
+    <div class="row">
+      <div class="col-xs-6 col-md-6 text-left">
+        <p>Total: {{searchResults.total}}</p>
+      </div>
+      <div class="col-xs-6 col-md-6 text-right">
+        <!-- <input type="text" ng-model="searchText" class="searchTextArea" placeholder="search" > -->
+      </div>
+
+    </div>
+    <table class="table text-center dataShow">
+      <thead class="bg-success">
+        <tr>
+          <th class="col-xs-1 col-md-1 text-center" >Image</th>
+          <th class="col-xs-1 col-md-1 text-center clickable" ng-click="dataValue = 'name'">Name</th>
+          <th class="col-xs-1 col-md-1 text-center clickable" ng-click="dataValue = 'rating'">Rating</th>
+          <th class="col-xs-1 col-md-1 text-center" >Phone</th>
+          <th class="col-xs-1 col-md-1 text-center" >Link</th>
+          <th class="col-xs-1 col-md-2 text-center" >Address</th>
+          <!-- <th class="col-xs-1 col-md-2 text-center" >id</th> -->
+          <th class="col-xs-4 col-md-4 text-center" >Snippet</th>
+          <th class="col-xs-1 col-md-1 text-center" >My Favorite</th>
+        </tr>
+
+      </thead>
+      <tbody  ng-repeat="result in searchResults.businesses | orderBy: dataValue track by $index">
+        <tr>
+          <td class="col-xs-1 col-md-1"><img class="thumbnail" src="{{result.image_url}}" alt="food"></td>
+          <td class="col-xs-1 col-md-1">{{ result.name }}</td>
+          <td class="col-xs-1 col-md-1">{{ result.rating }}</td>
+          <td class="col-xs-1 col-md-1">{{ result.phone | phonenumber}}</td>
+          <td class="col-xs-1 col-md-1"><a target="_blank" href="{{ result.url}}">visit websit</a></td>
+          <td class="col-xs-1 col-md-2">{{ result.location.display_address[0]}} {{result.location.display_address[1]}} {{result.location.display_address[2]}}</td>
+          <!-- <td class="col-xs-1 col-md-2">{{ result.id}}</td> -->
+          <td class="col-xs-4 col-md-4">
+            {{result.snippet_text}}
+          </td>
+          <td class="col-xs-1 col-md-1">
+            <button class="btn btn-success" ng-click="addYelp(result.id)"><i class="fa fa-thumbs-up"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- </pre> -->
+  </div>
+
+</div>
