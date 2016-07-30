@@ -1,25 +1,11 @@
 <div class="container">
   <h1>Track Yelp</h1>
 
-  <!-- <form ng-submit='addYelp()'>
-
-    <input type="text" ng-model='addObj.symbol' placeholder="symbol" required>
-    <button class="btn btn-success">Add</button>
-
-  </form> -->
-
   <br>
   <br>
-
-  <!-- <div>
-    <div ng-if="searchResults" class="alert alert-warning">
-      {{message}}
-    </div>
-  </div> -->
 
   <div ng-if="searchResults">
-    <!-- {{searchResults | json}} -->
-    <!-- <pre> -->
+
     <button ng-show="searchResults.length" class="btn btn-info" ng-click="refreshPage()">Refresh</button>
     <table class="table">
       <thead>
@@ -50,7 +36,7 @@
         </tr>
       </tbody>
     </table>
-    <!-- </pre> -->
+    
   </div>
 
 
