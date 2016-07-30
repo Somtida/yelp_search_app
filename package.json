@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "bower i"
+    "start": "node app.js ",
+    "postinstall": "bower i && gulp build"
   },
   "engines": {
     "node": "6.2.2"
